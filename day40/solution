@@ -1,0 +1,18 @@
+# 🚀 Day 41 – Height of a Binary Tree (Tree Basics)
+
+# 🧑‍💻 Problem: Find the Height of a Binary Tree
+# 🔗 GFG Link:
+# https://www.geeksforgeeks.org/problems/height-of-binary-tree/1
+
+class Solution {
+  public:
+    int height(Node* root) {
+        if (root == NULL)
+            return -1;   // height in terms of edges
+        
+        int leftHeight = height(root->left);
+        int rightHeight = height(root->right);
+        
+        return 1 + max(leftHeight, rightHeight);
+    }
+};
